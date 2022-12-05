@@ -1,14 +1,5 @@
 'use strict';
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// BANKIST APP
-
-/////////////////////////////////////////////////
-// Data
-
-// DIFFERENT DATA! Contains movement dates, currency and locale
-
 const account1 = {
   owner: 'Liad Tiblum',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
@@ -195,16 +186,9 @@ const startLogOutTimer = function () {
   const timer = setInterval(tick, 1000);
   return timer;
 };
-///////////////////////////////////////
 // Event handlers
 let currentAccount, timer;
-//FAKE ALWAYS LOGGED IN
-// currentAccount = account1;
-// updateUI(currentAccount);
-// containerApp.style.opacity = 100;
-//Experiment
 
-//FAKE ALWAYS LOGGED IN
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
   e.preventDefault();
@@ -321,130 +305,3 @@ btnSort.addEventListener('click', function (e) {
   displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-/*
-console.log(0.1 + 0.2);
-console.log('hello');
-console.log(Number.parseInt('30px', 10));
-console.log(Number.isNaN('20px'));
-//Better way to check then isNaN
-console.log(Number.isFinite('20'));
-console.log(Math.sqrt(25));
-console.log(25 ** (1 / 2));
-console.log(Math.max(5, 18, '23', 11, 2));
-console.log(Math.PI * Number.parseFloat('10px') ** 2);
-console.log(Math.trunc(Math.random() * 6 + 1));
-const randomInt = (min, max) =>
-Math.trunc(Math.random() * (max - min) + 1) + min;
-console.log(randomInt(10, 20));
-console.log(Math.trunc(23.9));
-console.log(Math.round(23.9));
-console.log(Math.ceil(23.3));
-console.log(Math.floor(23.9));
-console.log((2.7).toFixed(3));
-console.log(+(2.723).toFixed(2));
-console.log(5 % 2);
-const isEven = n => n % 2 === 0;
-labelBalance.addEventListener('click', function () {
-  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
-    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
-    if (i % 3 === 0) row.style.backgroundColor = 'blue';
-  });
-});
-const diameter = 287_460_000_000;
-console.log(diameter);
-const price = 345_99;
-console.log(price);
-const transferFee1 = 15_00;
-const transferFee2 = 1_500;
-console.log(transferFee1, transferFee2);
-const PI = 3.14_15;
-console.log(Number('230000'));
-console.log(Number('23_000'));
-console.log(2 ** 53 + 1);
-console.log(Number.MAX_SAFE_INTEGER);
-console.log(51231251231512312541235123n);
-console.log(BigInt(51231251231512312541235123));
-//Operation
-console.log(10000n + 10000n);
-console.log(123142314512363454234235n * 15123125123125123123124n);
-console.log(20n < 25);
-console.log(20n === 20);
-const huge = 235123125123125n;
-console.log(huge + ' is REALLY big!!');
-// console.log(Math.sqrt(16n));
-console.log(10n / 3n);
-console.log(Number(5n));
-//Create a date
-const now = new Date();
-console.log(now);
-console.log(new Date('Jun 25 2022 17:35:57'));
-console.log(new Date('December 24,2015'));
-console.log(new Date(account1.movementsDates[0]));
-console.log(new Date(2037, 10, 19, 15, 23, 5));
-console.log(new Date(0));
-console.log(new Date(3 * 24 * 60 * 60 * 1000));
-//Working with dates
-const future = new Date(2037, 1, 19, 15, 23);
-console.log(future);
-console.log(future.getFullYear());
-console.log(future.getMonth());
-console.log(future.getDate());
-console.log(future.getDay());
-console.log(future.toISOString());
-console.log(future.getTime());
-console.log(new Date(2118662580000));
-console.log(Date.now());
-future.setFullYear(2040);
-console.log(future);
-const future = new Date(2037, 10, 19, 15, 23);
-console.log(+future);
-const calcDaysPassed = (date1, date2) =>
-Math.abs((date2 - date1) / (1000 * 60 * 60 * 24));
-// const days1 = calcDaysPassed(new Date(2037, 3, 14), new Date(2037, 3, 24));
-// console.log(days1);
-const num = 342523.23;
-const options = {
-  style: 'currency',
-  currency: 'EUR',
-  useGrouping: false,
-};
-console.log('US:    ', new Intl.NumberFormat('en-US', options).format(num));
-console.log(
-  'Germany:    ',
-  new Intl.NumberFormat('de-DE', options).format(num)
-  );
-  console.log('Syria:    ', new Intl.NumberFormat('ar-SY', options).format(num));
-  console.log(
-    navigator.language,
-    new Intl.NumberFormat(navigator.language, options).format(num)
-    );
-    const ingredients = ['olives', 'spinach'];
-    const pizzaTimer = setTimeout(
-      (ing1, ing2) => console.log(`Here is your Pizza with ${ing1} and ${ing2}`),
-      3000,
-      ...ingredients
-      );
-      console.log('Waiting...');
-      if (ingredients.includes('spinach')) {
-  clearTimeout(pizzaTimer);
-}
-// setTimeout
-setInterval(function () {
-  const now = new Date();
-  const hour = now.getHours();
-  const minute = now.getMinutes();
-  const second = now.getSeconds();
-  console.log(`${hour}:${minute}:${second}`);
-  console.log(
-    new Intl.DateTimeFormat('he-IL', {
-      hour: 'numeric',
-      minute: 'numeric',
-      second: 'numeric',
-    }).format(now)
-    );
-  }, 1000);
-  */
